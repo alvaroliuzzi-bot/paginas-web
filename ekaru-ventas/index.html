@@ -362,6 +362,53 @@ fieldset.bset legend{padding:0 6px;font-weight:700;font-size:14px;display:flex;a
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   .scan::after{display:none}
 }
+
+/* ===== Diseño vivo (colores y vida, sin cambiar funciones) ===== */
+:root{--v1:#1D9A84;--v2:#3CC4A8;--v3:#F2A541;--v4:#FF8A5B;--v5:#E0457B;--v6:#8C2F5F;--v7:#6D5BD0;
+  --vgrad:linear-gradient(90deg,var(--v1),var(--v2) 18%,var(--v3) 36%,var(--v4) 54%,var(--v5) 72%,var(--v7));}
+body{background:
+  radial-gradient(900px 500px at 105% -10%,color-mix(in srgb,var(--v7) 12%,transparent),transparent 70%),
+  radial-gradient(800px 500px at -10% 110%,color-mix(in srgb,var(--v3) 14%,transparent),transparent 70%),
+  radial-gradient(700px 420px at 40% -20%,color-mix(in srgb,var(--v2) 14%,transparent),transparent 70%),var(--bg);background-attachment:fixed}
+.top{border-bottom:0;box-shadow:0 6px 24px -14px rgba(18,48,42,.35)}
+.top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--vgrad)}
+.logo-w{background:linear-gradient(90deg,var(--v1),var(--v7));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tab[aria-current="page"]{background:linear-gradient(135deg,var(--v1),var(--v2));color:#fff;box-shadow:0 6px 16px -8px var(--v1)}
+.demo{background:linear-gradient(90deg,var(--v5),var(--v4));color:#fff;box-shadow:0 4px 14px -6px var(--v5)}
+.card{position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--accent,var(--v1))}
+.rail>.card:nth-child(7n+1){--accent:var(--v1)} .rail>.card:nth-child(7n+2){--accent:var(--v3)}
+.rail>.card:nth-child(7n+3){--accent:var(--v5)} .rail>.card:nth-child(7n+4){--accent:var(--v7)}
+.rail>.card:nth-child(7n+5){--accent:var(--v4)} .col>.card{--accent:var(--vgrad)}
+.col>.card::before{background:var(--vgrad)}
+.h-page{background:linear-gradient(90deg,var(--ink),var(--v1) 55%,var(--v7));-webkit-background-clip:text;background-clip:text;color:transparent}
+.venta-total{color:var(--v1)}
+.btn-primary:not(:disabled){background:linear-gradient(135deg,var(--v1),var(--v2));border-color:transparent;box-shadow:0 8px 18px -10px var(--v1)}
+.btn-primary:not(:disabled):hover{filter:brightness(1.06);transform:translateY(-1px)}
+.chip{transition:transform .15s,background-color .15s,box-shadow .15s}
+.chip:hover{transform:translateY(-1px)}
+.chips .chip:nth-child(7n+1){--c:var(--v1)} .chips .chip:nth-child(7n+2){--c:var(--v3)} .chips .chip:nth-child(7n+3){--c:var(--v5)}
+.chips .chip:nth-child(7n+4){--c:var(--v7)} .chips .chip:nth-child(7n+5){--c:var(--v4)} .chips .chip:nth-child(7n+6){--c:var(--v6)} .chips .chip:nth-child(7n+7){--c:var(--v2)}
+.chips .chip{border-color:color-mix(in srgb,var(--c) 45%,var(--line))}
+.chips .chip small{background:color-mix(in srgb,var(--c) 16%,transparent);color:var(--c);border-radius:99px;padding:1px 7px;font-weight:700}
+.chips .chip[aria-pressed="true"]{background:var(--c);border-color:var(--c);color:#fff;box-shadow:0 6px 16px -8px var(--c)}
+.chips .chip[aria-pressed="true"] small{background:rgba(255,255,255,.25);color:#fff}
+thead tr{background:linear-gradient(90deg,color-mix(in srgb,var(--v2) 16%,var(--surface-2)),color-mix(in srgb,var(--v3) 12%,var(--surface-2)),color-mix(in srgb,var(--v7) 12%,var(--surface-2)))} thead th{background:transparent}
+tbody tr{transition:background-color .15s,box-shadow .15s}
+tbody tr:hover{box-shadow:inset 4px 0 0 var(--v4)}
+.tour .n{color:#fff;border:0}
+.tour>:nth-child(5n+1) .n{background:var(--v1)} .tour>:nth-child(5n+2) .n{background:var(--v3)}
+.tour>:nth-child(5n+3) .n{background:var(--v5)} .tour>:nth-child(5n+4) .n{background:var(--v7)} .tour>:nth-child(5n+5) .n{background:var(--v4)}
+.tour button:hover{border-color:var(--v4)}
+.step:nth-of-type(4n+1){--sc:var(--v1)} .step:nth-of-type(4n+2){--sc:var(--v3)} .step:nth-of-type(4n+3){--sc:var(--v5)} .step:nth-of-type(4n+4){--sc:var(--v7)}
+.step-h .n{background:var(--sc,var(--v1));color:#fff}
+.sh-head{background:linear-gradient(135deg,color-mix(in srgb,var(--v2) 16%,var(--surface)),color-mix(in srgb,var(--v7) 10%,var(--surface)))}
+.sh-head{border-bottom:4px solid;border-image:var(--vgrad) 1}
+.tier:nth-child(4n+1) .ico{background:var(--v1);color:#fff} .tier:nth-child(4n+2) .ico{background:var(--v3);color:#fff}
+.tier:nth-child(4n+3) .ico{background:var(--v5);color:#fff} .tier:nth-child(4n+4) .ico{background:var(--v7);color:#fff}
+.fcard{border-top:4px solid var(--v3)} .fcard:nth-child(3n+2){border-top-color:var(--v5)} .fcard:nth-child(3n+3){border-top-color:var(--v7)}
+.toast{border-left:5px solid var(--v2)}
+@media (prefers-reduced-motion:reduce){.card,.chip,tbody tr{transition:none}}
 </style>
 
 <header class="top">

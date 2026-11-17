@@ -2,20 +2,42 @@
 <title>Capturas e-Karú</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>
-:root{--bg:#EEF4F2;--fg:#0F2F2B;--card:#FFFFFF;--line:#C9DAD6}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#071F1C;--fg:#E8F6F3;--card:#0D2F2B;--line:#1E5C54;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#071F1C;--fg:#E8F6F3;--card:#0D2F2B;--line:#1E5C54;color-scheme:dark}
-body{background:var(--bg);color:var(--fg);font-family:system-ui,sans-serif;padding-block:12px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-main{display:flex;flex-direction:column;gap:16px;align-items:center}
-figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:6px;min-height:92vh;justify-content:center}
-figure img{height:84vh;width:auto;max-width:100%;object-fit:contain;border:1px solid var(--line);border-radius:6px;background:var(--card)}
-figcaption{font-size:13px}
+:root{--bg:#F3F6F5;--fg:#12302A;--mut:#4F655C;--card:#FFFFFF;--line:#D7E0DB;
+  --v1:#1D9A84;--v3:#F2A541;--v5:#E0457B;--v7:#6D5BD0;
+  --vgrad:linear-gradient(90deg,#1D9A84,#3CC4A8 18%,#F2A541 36%,#FF8A5B 54%,#E0457B 72%,#6D5BD0)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0B1714;--fg:#E8F6F3;--mut:#A9C2BA;--card:#13241F;--line:#28423A;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0B1714;--fg:#E8F6F3;--mut:#A9C2BA;--card:#13241F;--line:#28423A;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;color:var(--fg);font-family:"Segoe UI",system-ui,sans-serif;
+  background:radial-gradient(900px 500px at 105% -10%,color-mix(in srgb,var(--v7) 14%,transparent),transparent 70%),
+  radial-gradient(800px 500px at -10% 110%,color-mix(in srgb,var(--v3) 16%,transparent),transparent 70%),var(--bg);background-attachment:fixed;
+  padding:0 max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px))}
+header{max-width:1100px;margin:0 auto;padding:36px 0 20px;text-align:center}
+.kick{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:99px;background:var(--vgrad);color:#fff}
+h1{font-size:clamp(28px,4vw,44px);margin:14px 0 8px;line-height:1.1;background:linear-gradient(90deg,var(--fg),var(--v1) 55%,var(--v7));-webkit-background-clip:text;background-clip:text;color:transparent}
+header p{margin:0 auto;max-width:620px;color:var(--mut);line-height:1.5}
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+nav a{--c:var(--v1);text-decoration:none;color:var(--c);font-weight:700;font-size:14px;padding:8px 14px;border-radius:99px;border:2px solid var(--c);background:color-mix(in srgb,var(--c) 10%,var(--card));transition:background-color .15s,color .15s}
+nav a:hover{background:var(--c);color:#fff}
+main{display:flex;flex-direction:column;gap:28px;align-items:center;max-width:1100px;margin:0 auto}
+figure{--c:var(--v1);margin:0;display:flex;flex-direction:column;align-items:center;gap:12px;min-height:92vh;justify-content:center;scroll-margin-top:12px;width:100%}
+figure:nth-of-type(2),nav a:nth-of-type(2){--c:var(--v3)} figure:nth-of-type(3),nav a:nth-of-type(3){--c:var(--v5)} figure:nth-of-type(4),nav a:nth-of-type(4){--c:var(--v7)}
+.frame{padding:10px;border-radius:20px;background:linear-gradient(135deg,var(--c),color-mix(in srgb,var(--c) 40%,#fff));box-shadow:0 24px 50px -24px var(--c);max-width:100%}
+figure img{display:block;height:80vh;width:auto;max-width:100%;object-fit:contain;border-radius:12px;background:var(--card)}
+figcaption{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700}
+figcaption b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--c);color:#fff;font-size:14px}
 </style>
+<header>
+<span class="kick">e-Karú · encuesta al personal de caja</span>
+<h1>Capturas e-Karú</h1>
+<p>Las cuatro pantallas que se mostraron en la encuesta: cómo se vende un cono con dos sabores y un brownie, con el código de barra de cada cosa.</p>
+<nav><a href="#i1">1 · Sabores</a><a href="#i2">2 · Baldes</a><a href="#i3">3 · Brownie con helado</a><a href="#i4">4 · Brownie porción</a></nav>
+</header>
 <main>
-<figure id="i1"><img src="ekaru_cono2_sabores.jpg" alt="Cono 2: grupo y sabores"><figcaption>Cono 2 · grupo y sabores</figcaption></figure>
-<figure id="i2"><img src="ekaru_cono2_baldes.jpg" alt="Cono 2: baldes"><figcaption>Cono 2 · un balde por sabor</figcaption></figure>
-<figure id="i3"><img src="ekaru_brownie_con_helado.jpg" alt="Brownie con helado"><figcaption>Brownie con helado</figcaption></figure>
-<figure id="i4"><img src="ekaru_brownie_porcion.jpg" alt="Brownie porción en la caja"><figcaption>Brownie porción en la caja</figcaption></figure>
+<figure id="i1"><div class="frame"><img src="ekaru_cono2_sabores.jpg" alt="Cono 2: grupo y sabores"></div><figcaption><b>1</b>Cono 2 · grupo y sabores</figcaption></figure>
+<figure id="i2"><div class="frame"><img src="ekaru_cono2_baldes.jpg" alt="Cono 2: baldes"></div><figcaption><b>2</b>Cono 2 · un balde por sabor</figcaption></figure>
+<figure id="i3"><div class="frame"><img src="ekaru_brownie_con_helado.jpg" alt="Brownie con helado"></div><figcaption><b>3</b>Brownie con helado</figcaption></figure>
+<figure id="i4"><div class="frame"><img src="ekaru_brownie_porcion.jpg" alt="Brownie porción en la caja"></div><figcaption><b>4</b>Brownie porción en la caja</figcaption></figure>
 </main>
 
 </body></html>
